@@ -1,0 +1,996 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Tiny World For You 🌙</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:"Segoe UI", sans-serif;
+  background:#08091d;
+  color:white;
+  overflow:hidden;
+}
+
+.scene{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  padding:20px;
+}
+
+.box{
+  width:92%;
+  max-width:550px;
+  text-align:center;
+  position:relative;
+  z-index:10;
+}
+
+.hidden{
+  display:none !important;
+}
+
+h1{
+  color:#d5caff;
+  font-weight:700;
+}
+
+h2{
+  color:#c9bdff;
+}
+
+p{
+  color:#deddf0;
+  line-height:1.7;
+}
+
+.cute-btn{
+  border:none;
+  padding:12px 25px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#7564ed,#b66cff);
+  color:white;
+  margin-top:15px;
+  transition:.3s;
+}
+
+.cute-btn:hover{
+  transform:scale(1.07);
+  box-shadow:0 0 25px rgba(174,110,255,.6);
+  color:white;
+}
+
+/* =========================
+   STARS
+========================= */
+
+.star{
+  position:absolute;
+  color:white;
+  font-size:18px;
+  animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+  from{
+    opacity:.2;
+    transform:scale(.7);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1.2);
+  }
+}
+
+/* =========================
+   MOON
+========================= */
+
+.moon{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:#fff8d9;
+  box-shadow:0 0 50px #fff4b5;
+  margin:0 auto 25px;
+  animation:moonFloat 3s ease-in-out infinite;
+}
+
+@keyframes moonFloat{
+  50%{
+    transform:translateY(-10px);
+  }
+}
+
+/* =========================
+   RABBIT
+========================= */
+
+.rabbit{
+  font-size:80px;
+  animation:bounce 1.8s infinite;
+}
+
+@keyframes bounce{
+  50%{
+    transform:translateY(-10px);
+  }
+}
+
+/* =========================
+   CLOUDS
+========================= */
+
+.cloud-area{
+  position:relative;
+  height:220px;
+  margin-top:15px;
+}
+
+.cloud{
+  position:absolute;
+  font-size:60px;
+  cursor:pointer;
+  transition:.3s;
+  user-select:none;
+}
+
+.cloud:hover{
+  transform:scale(1.15);
+}
+
+.cloud1{
+  left:5%;
+  top:30px;
+}
+
+.cloud2{
+  left:38%;
+  top:100px;
+}
+
+.cloud3{
+  right:5%;
+  top:20px;
+}
+
+.cloud-message{
+  min-height:45px;
+  color:#d6cbff;
+  font-weight:600;
+}
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope{
+  font-size:110px;
+  cursor:pointer;
+  transition:.4s;
+  display:inline-block;
+}
+
+.envelope:hover{
+  transform:scale(1.08) rotate(-3deg);
+}
+
+.letter{
+  background:#f9f4ff;
+  color:#3c3150;
+  padding:25px;
+  border-radius:20px;
+  margin-top:20px;
+  animation:openLetter .8s ease;
+  box-shadow:0 10px 40px rgba(0,0,0,.3);
+}
+
+.letter p{
+  color:#4c405e;
+}
+
+@keyframes openLetter{
+  from{
+    opacity:0;
+    transform:scale(.7) translateY(30px);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1) translateY(0);
+  }
+}
+
+/* =========================
+   FLOWERS
+========================= */
+
+.flowers{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  margin:25px 0;
+}
+
+.flower{
+  font-size:55px;
+  cursor:pointer;
+  transition:.4s;
+  opacity:.65;
+}
+
+.flower:hover{
+  transform:scale(1.2) rotate(8deg);
+}
+
+.flower.active{
+  opacity:1;
+  filter:drop-shadow(0 0 12px #d49cff);
+}
+
+/* =========================
+   BALLOONS
+========================= */
+
+.balloon-area{
+  height:330px;
+  position:relative;
+  margin-top:10px;
+}
+
+.balloon{
+  position:absolute;
+  font-size:65px;
+  cursor:pointer;
+  transition:.25s;
+  user-select:none;
+}
+
+.balloon:hover{
+  transform:scale(1.15);
+}
+
+.b1{
+  left:8%;
+  top:30px;
+}
+
+.b2{
+  left:38%;
+  top:100px;
+}
+
+.b3{
+  right:8%;
+  top:25px;
+}
+
+.b4{
+  left:18%;
+  bottom:10px;
+}
+
+.b5{
+  right:22%;
+  bottom:0;
+}
+
+.pop-message{
+  color:#d7cbff;
+  font-weight:600;
+  min-height:45px;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final-heart{
+  font-size:90px;
+  animation:heartBeat 1.2s infinite;
+}
+
+@keyframes heartBeat{
+  50%{
+    transform:scale(1.18);
+  }
+}
+
+.final-card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  padding:25px;
+  border-radius:25px;
+  backdrop-filter:blur(8px);
+  box-shadow:0 0 35px rgba(143,108,255,.2);
+}
+
+.confetti{
+  position:fixed;
+  top:-20px;
+  font-size:22px;
+  animation:fall 5s linear forwards;
+  z-index:20;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(360deg);
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- =========================
+     SCENE 1
+========================= -->
+
+<div id="scene1" class="scene">
+
+  <!-- Stars -->
+
+  <span class="star" style="left:8%;top:15%">✦</span>
+  <span class="star" style="left:25%;top:75%">✧</span>
+  <span class="star" style="right:10%;top:18%">✦</span>
+  <span class="star" style="right:25%;top:80%">✧</span>
+  <span class="star" style="left:50%;top:8%">✦</span>
+
+  <div class="box">
+
+    <div class="moon"></div>
+
+    <h1>Hey... 👀</h1>
+
+    <p>
+      Someone made a tiny little world
+      especially for you.
+    </p>
+
+    <p>
+      I don't know who did it... 🤨
+      <br>
+      but apparently you're supposed to explore it.
+    </p>
+
+    <button class="cute-btn" onclick="showScene(2)">
+      Enter this tiny world 🌙
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     SCENE 2
+========================= -->
+
+<div id="scene2" class="scene hidden">
+
+  <div class="box">
+
+    <div class="rabbit">🐰</div>
+
+    <h1>Oh! You found me! 😭</h1>
+
+    <p>
+      I'm supposed to give you something...
+    </p>
+
+    <p>
+      Unfortunately...
+      <b>I forgot where I put it. 😂</b>
+    </p>
+
+    <p>
+      Can you help me find it?
+    </p>
+
+    <button class="cute-btn" onclick="showScene(3)">
+      Fineee, let's find it 🔎
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     SCENE 3
+========================= -->
+
+<div id="scene3" class="scene hidden">
+
+  <div class="box">
+
+    <h2>☁️ Find the suspicious cloud ☁️</h2>
+
+    <p>
+      One of these clouds is hiding something.
+      <br>
+      Choose wisely. 👀
+    </p>
+
+    <div class="cloud-area">
+
+      <div class="cloud cloud1"
+           onclick="cloudWrong()">
+        ☁️
+      </div>
+
+      <div class="cloud cloud2"
+           onclick="cloudCorrect()">
+        ☁️
+      </div>
+
+      <div class="cloud cloud3"
+           onclick="cloudWrong2()">
+        ☁️
+      </div>
+
+    </div>
+
+    <div id="cloudMessage" class="cloud-message"></div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     SCENE 4
+========================= -->
+
+<div id="scene4" class="scene hidden">
+
+  <div class="box">
+
+    <h1>YOU FOUND IT! 😭💌</h1>
+
+    <p>
+      The rabbit wasn't completely useless after all.
+      😂
+    </p>
+
+    <p>
+      There is an envelope for you.
+    </p>
+
+    <div class="envelope" onclick="openLetter()">
+      💌
+    </div>
+
+    <div id="letter" class="letter hidden">
+
+      <p>
+        "There are some things people don't
+        say often enough..."
+      </p>
+
+      <p>
+        So before you continue,
+        just remember:
+      </p>
+
+      <h3>
+        You are genuinely special. 💜
+      </h3>
+
+      <button class="cute-btn"
+              onclick="showScene(5)">
+        There's more? 👀
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     SCENE 5
+========================= -->
+
+<div id="scene5" class="scene hidden">
+
+  <div class="box">
+
+    <h1>Three Little Things 🌷</h1>
+
+    <p>
+      Click the flowers one by one.
+      <br>
+      I have something to tell you.
+    </p>
+
+    <div class="flowers">
+
+      <div id="flower1"
+           class="flower"
+           onclick="flower(1)">
+        🌷
+      </div>
+
+      <div id="flower2"
+           class="flower"
+           onclick="flower(2)">
+        🌸
+      </div>
+
+      <div id="flower3"
+           class="flower"
+           onclick="flower(3)">
+        🌺
+      </div>
+
+    </div>
+
+    <div id="flowerMessage"
+         class="message">
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     SCENE 6
+========================= -->
+
+<div id="scene6" class="scene hidden">
+
+  <div class="box">
+
+    <h1>Okayyy... 🎈</h1>
+
+    <p>
+      You found the flowers.
+    </p>
+
+    <p>
+      But apparently there are still
+      <b>5 tiny messages</b> floating around.
+    </p>
+
+    <p>
+      Pop them all. 😂
+    </p>
+
+    <div class="balloon-area">
+
+      <div class="balloon b1"
+           onclick="popBalloon(this,1)">
+        🎈
+      </div>
+
+      <div class="balloon b2"
+           onclick="popBalloon(this,2)">
+        🎈
+      </div>
+
+      <div class="balloon b3"
+           onclick="popBalloon(this,3)">
+        🎈
+      </div>
+
+      <div class="balloon b4"
+           onclick="popBalloon(this,4)">
+        🎈
+      </div>
+
+      <div class="balloon b5"
+           onclick="popBalloon(this,5)">
+        🎈
+      </div>
+
+    </div>
+
+    <div id="popMessage"
+         class="pop-message">
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     SCENE 7
+========================= -->
+
+<div id="scene7" class="scene hidden">
+
+  <div class="box">
+
+    <div class="moon"></div>
+
+    <h1>Okay... that's everything. 🌙</h1>
+
+    <p>
+      You've reached the end.
+    </p>
+
+    <p>
+      Nothing else is hidden here.
+      Promise. 😌
+    </p>
+
+    <button class="cute-btn"
+            onclick="fakeEnd()">
+      Okay, bye 👋
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     FINAL SCENE
+========================= -->
+
+<div id="scene8" class="scene hidden">
+
+  <div class="box">
+
+    <div class="final-heart">💜</div>
+
+    <h1>
+      WAIT...
+    </h1>
+
+    <h2>
+      I LIED. 😂
+    </h2>
+
+    <p>
+      There was actually
+      <b>one last thing.</b>
+    </p>
+
+    <button class="cute-btn"
+            onclick="showFinal()">
+      Open it 🥹
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     FINAL WISH
+========================= -->
+
+<div id="scene9" class="scene hidden">
+
+  <div class="box">
+
+    <div class="final-heart">🎂💜</div>
+
+    <h1>
+      Advance Happy Birthday!
+    </h1>
+
+    <h2>
+      My Beautiful Bestie 🥹
+    </h2>
+
+    <div class="final-card">
+
+      <p>
+        Your birthday isn't here yet...
+        but I seriously couldn't wait. 😭
+      </p>
+
+      <p>
+        So I made you this tiny little world,
+        just so you could spend a few minutes
+        knowing how special you are to me. 💜
+      </p>
+
+      <p>
+        I hope the coming year brings you
+        happiness you didn't even know
+        you were waiting for. ✨
+      </p>
+
+      <p>
+        May your days be softer,
+        your heart lighter,
+        your smiles bigger,
+        and your life full of beautiful surprises. 🌙
+      </p>
+
+      <p>
+        Thank you for being my bestie,
+        my nonsense partner,
+        my secret keeper,
+        and one of my favorite people. 😂💜
+      </p>
+
+      <h3>
+        Stay exactly the way you are. 🌷
+      </h3>
+
+      <h2>
+        Love you loads, Bestie! 💜
+      </h2>
+
+      <p>
+        🎀 Advance Happy Birthday 🎀
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   CHANGE SCENES
+========================= */
+
+function showScene(number){
+
+  document.querySelectorAll(".scene")
+  .forEach(function(scene){
+
+    scene.classList.add("hidden");
+
+  });
+
+  document.getElementById("scene"+number)
+  .classList.remove("hidden");
+
+}
+
+
+/* =========================
+   CLOUDS
+========================= */
+
+function cloudWrong(){
+
+  document.getElementById("cloudMessage")
+  .innerHTML =
+  "😂 Nopeee! That cloud is innocent. Try another one.";
+
+}
+
+function cloudWrong2(){
+
+  document.getElementById("cloudMessage")
+  .innerHTML =
+  "😭 Wrong cloud! You just accused an innocent cloud.";
+
+}
+
+function cloudCorrect(){
+
+  document.getElementById("cloudMessage")
+  .innerHTML =
+  "✨ YOU FOUND IT! Wait... how are you actually good at this? 😂";
+
+  setTimeout(function(){
+
+    showScene(4);
+
+  },1300);
+
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+function openLetter(){
+
+  document.getElementById("letter")
+  .classList.remove("hidden");
+
+}
+
+
+/* =========================
+   FLOWERS
+========================= */
+
+let flowerCount = 0;
+
+function flower(number){
+
+  let messages = {
+
+    1:
+    "🌷 You make even normal days feel a little happier.",
+
+    2:
+    "🌸 You somehow understand my nonsense without needing an explanation. 😂",
+
+    3:
+    "🌺 Having you as my bestie is something I'll always be grateful for. 💜"
+
+  };
+
+  document.getElementById("flower"+number)
+  .classList.add("active");
+
+  document.getElementById("flowerMessage")
+  .innerHTML = messages[number];
+
+  flowerCount++;
+
+  if(flowerCount >= 3){
+
+    setTimeout(function(){
+
+      showScene(6);
+
+    },1700);
+
+  }
+
+}
+
+
+/* =========================
+   BALLOONS
+========================= */
+
+let popped = 0;
+
+function popBalloon(balloon, number){
+
+  let messages = {
+
+    1:
+    "😂 Officially certified: you are 100% my favorite headache.",
+
+    2:
+    "💜 Life is a little better with you in it.",
+
+    3:
+    "🥹 Some friendships just feel like home.",
+
+    4:
+    "😭 Thank you for surviving all my nonsense.",
+
+    5:
+    "✨ You deserve more happiness than you realize."
+
+  };
+
+  balloon.innerHTML = "💥";
+
+  document.getElementById("popMessage")
+  .innerHTML = messages[number];
+
+  setTimeout(function(){
+
+    balloon.style.display="none";
+
+  },350);
+
+  popped++;
+
+  if(popped >= 5){
+
+    setTimeout(function(){
+
+      showScene(7);
+
+    },1800);
+
+  }
+
+}
+
+
+/* =========================
+   FAKE END
+========================= */
+
+function fakeEnd(){
+
+  showScene(8);
+
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+function showFinal(){
+
+  showScene(9);
+
+  createConfetti();
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+function createConfetti(){
+
+  let emojis = [
+    "💜",
+    "✨",
+    "🌸",
+    "💫",
+    "🎀",
+    "💕",
+    "⭐"
+  ];
+
+  for(let i=0;i<35;i++){
+
+    let item =
+    document.createElement("div");
+
+    item.className="confetti";
+
+    item.innerHTML =
+    emojis[Math.floor(
+      Math.random()*emojis.length
+    )];
+
+    item.style.left =
+    Math.random()*100+"vw";
+
+    item.style.animationDuration =
+    (3+Math.random()*3)+"s";
+
+    item.style.animationDelay =
+    Math.random()*2+"s";
+
+    document.body.appendChild(item);
+
+    setTimeout(function(){
+
+      item.remove();
+
+    },7000);
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
