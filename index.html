@@ -1,0 +1,1637 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Mahnoor 💗</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page.active {
+            display: flex;
+        }
+
+        h1, h2, h3, .script {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .urdu {
+            font-family: 'Noto Naskh Arabic', serif;
+            direction: rtl;
+            line-height: 2.2;
+        }
+
+        /* =========================
+           GENERAL BUTTON
+        ========================= */
+
+        .cute-btn {
+            border: none;
+            border-radius: 50px;
+            padding: 13px 28px;
+            font-weight: 600;
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        .cute-btn:hover {
+            transform: translateY(-4px) scale(1.03);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        .float-item {
+            position: absolute;
+            font-size: 25px;
+            opacity: .65;
+            animation: floating 5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(10deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        /* =========================
+           PAGE 1
+        ========================= */
+
+        #page1 {
+            background:
+                radial-gradient(circle at 10% 20%, #fff 0, transparent 20%),
+                linear-gradient(135deg, #ffd9e7, #fff3f7, #e8d8ff);
+        }
+
+        .welcome-card {
+            width: min(700px, 100%);
+            background: rgba(255,255,255,.78);
+            backdrop-filter: blur(15px);
+            padding: 50px 30px;
+            border-radius: 40px;
+            text-align: center;
+            box-shadow: 0 25px 70px rgba(130,60,110,.18);
+            position: relative;
+            z-index: 2;
+        }
+
+        .big-heart {
+            font-size: 75px;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%,100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.18);
+            }
+        }
+
+        .pink-btn {
+            background: #d94f89;
+            color: white;
+        }
+
+        .pink-btn:hover {
+            background: #b9386e;
+            color: white;
+        }
+
+        /* =========================
+           PAGE 2 TEST
+        ========================= */
+
+        #page2 {
+            background: linear-gradient(135deg, #dff6ff, #eee1ff);
+        }
+
+        .test-card {
+            width: min(700px, 100%);
+            background: white;
+            padding: 40px 25px;
+            border-radius: 35px;
+            box-shadow: 0 20px 60px rgba(70,80,150,.15);
+            text-align: center;
+        }
+
+        .choice-btn {
+            width: 100%;
+            margin: 8px 0;
+            border: 2px solid #ddd;
+            background: #fff;
+            padding: 14px;
+            border-radius: 18px;
+            transition: .3s;
+        }
+
+        .choice-btn:hover {
+            transform: scale(1.03);
+            border-color: #8d73d6;
+            background: #f8f4ff;
+        }
+
+        .test-result {
+            margin-top: 20px;
+            padding: 18px;
+            border-radius: 20px;
+            background: #f2ecff;
+            display: none;
+        }
+
+        /* =========================
+           PAGE 3 RUNNING BUTTON
+        ========================= */
+
+        #page3 {
+            background: linear-gradient(135deg, #fff1bd, #ffd4aa);
+        }
+
+        .promise-card {
+            width: min(700px, 100%);
+            background: #fffdf4;
+            padding: 45px 25px;
+            border-radius: 35px;
+            box-shadow: 0 20px 55px rgba(140,90,30,.15);
+            text-align: center;
+        }
+
+        .run-area {
+            position: relative;
+            height: 160px;
+            margin-top: 20px;
+        }
+
+        #noButton {
+            position: absolute;
+            transition: .15s;
+            background: #fff;
+            border: 2px solid #e29b4d;
+            color: #a96820;
+            border-radius: 50px;
+            padding: 12px 25px;
+        }
+
+        #yesButton {
+            background: #e85d75;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 13px 28px;
+            margin: 10px;
+        }
+
+        /* =========================
+           PAGE 4 TREASURE
+        ========================= */
+
+        #page4 {
+            background: linear-gradient(135deg, #dfffe8, #d9f5ff);
+        }
+
+        .treasure-card {
+            width: min(800px, 100%);
+            background: rgba(255,255,255,.85);
+            padding: 40px 25px;
+            border-radius: 35px;
+            box-shadow: 0 20px 60px rgba(50,120,100,.14);
+            text-align: center;
+        }
+
+        .treasure-box {
+            border: none;
+            width: 130px;
+            height: 130px;
+            margin: 10px;
+            border-radius: 25px;
+            font-size: 45px;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,.08);
+            transition: .3s;
+        }
+
+        .treasure-box:hover {
+            transform: translateY(-8px) rotate(2deg);
+        }
+
+        .treasure-message {
+            margin-top: 25px;
+            padding: 22px;
+            border-radius: 22px;
+            background: #f1fff7;
+            display: none;
+        }
+
+        /* =========================
+           PAGE 5 MISS YOU
+        ========================= */
+
+        #page5 {
+            background:
+                radial-gradient(circle at 80% 10%, #ffffff 0, transparent 18%),
+                linear-gradient(135deg, #101528, #25204b, #3c2852);
+            color: white;
+        }
+
+        .moon {
+            font-size: 70px;
+            margin-bottom: 10px;
+        }
+
+        .miss-card {
+            width: min(750px, 100%);
+            background: rgba(255,255,255,.08);
+            backdrop-filter: blur(12px);
+            padding: 45px 30px;
+            border-radius: 35px;
+            border: 1px solid rgba(255,255,255,.15);
+            text-align: center;
+        }
+
+        .miss-line {
+            display: none;
+            font-size: 20px;
+            line-height: 2;
+            margin-top: 20px;
+            color: #f7dff2;
+        }
+
+        .night-btn {
+            background: #f0c5eb;
+            color: #39203d;
+        }
+
+        /* =========================
+           PAGE 6 POETRY
+        ========================= */
+
+        #page6 {
+            background: linear-gradient(135deg, #e5d5ff, #f8dfff, #d8e5ff);
+        }
+
+        .poetry-card {
+            width: min(800px, 100%);
+            background: rgba(255,255,255,.85);
+            padding: 45px 25px;
+            border-radius: 35px;
+            box-shadow: 0 20px 60px rgba(90,60,130,.14);
+            text-align: center;
+        }
+
+        .poetry-box {
+            background: #fbf6ff;
+            border-radius: 25px;
+            padding: 25px;
+            margin-top: 25px;
+            display: none;
+        }
+
+        .poetry-text {
+            font-size: 22px;
+        }
+
+        /* =========================
+           PAGE 7 REPORT
+        ========================= */
+
+        #page7 {
+            background: linear-gradient(135deg, #fff0d7, #ffe0c8);
+        }
+
+        .report {
+            width: min(700px, 100%);
+            background: #fffaf3;
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(120,80,40,.13);
+        }
+
+        .report-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 13px;
+            margin: 8px 0;
+            background: #fff0dd;
+            border-radius: 14px;
+        }
+
+        /* =========================
+           PAGE 8 WHY YOU
+        ========================= */
+
+        #page8 {
+            background: linear-gradient(135deg, #ffe0eb, #fff7fb);
+        }
+
+        .why-card {
+            width: min(800px, 100%);
+            text-align: center;
+        }
+
+        .why-item {
+            background: white;
+            padding: 20px;
+            border-radius: 22px;
+            margin: 12px 0;
+            box-shadow: 0 8px 25px rgba(120,50,80,.08);
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .why-item:hover {
+            transform: translateX(8px);
+        }
+
+        .why-answer {
+            display: none;
+            margin-top: 10px;
+            color: #b83e70;
+        }
+
+        /* =========================
+           PAGE 9 LETTER
+        ========================= */
+
+        #page9 {
+            background: linear-gradient(135deg, #f8dfd1, #fff4ed);
+        }
+
+        .letter {
+            width: min(800px, 100%);
+            background: #fffaf5;
+            padding: 45px 35px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(110,65,40,.15);
+            border-left: 7px solid #d8946f;
+        }
+
+        .letter p {
+            line-height: 2;
+            color: #604d43;
+        }
+
+        /* =========================
+           PAGE 10 LOADING
+        ========================= */
+
+        #page10 {
+            background: #111;
+            color: white;
+        }
+
+        .loading-card {
+            text-align: center;
+            width: min(600px, 100%);
+        }
+
+        .loader {
+            width: 100%;
+            height: 15px;
+            background: #333;
+            border-radius: 50px;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .loader-bar {
+            width: 0%;
+            height: 100%;
+            background: #ff6fa4;
+            transition: width .5s;
+        }
+
+        /* =========================
+           PAGE 11 FINAL
+        ========================= */
+
+        #page11 {
+            background:
+                radial-gradient(circle at 50% 30%, #fff 0, transparent 20%),
+                linear-gradient(135deg, #ffb7d0, #f6c9ff, #bcdcff);
+            text-align: center;
+        }
+
+        .final-card {
+            width: min(850px, 100%);
+            background: rgba(255,255,255,.72);
+            backdrop-filter: blur(15px);
+            padding: 50px 25px;
+            border-radius: 40px;
+            box-shadow: 0 25px 80px rgba(100,40,100,.2);
+        }
+
+        .birthday-title {
+            font-size: clamp(48px, 9vw, 90px);
+            color: #c43773;
+        }
+
+        .mahnoor-name {
+            font-size: clamp(60px, 12vw, 120px);
+            color: #9c2e67;
+        }
+
+        .final-heart {
+            font-size: 65px;
+            animation: heartbeat 1s infinite;
+        }
+
+        .confetti {
+            position: fixed;
+            top: -20px;
+            font-size: 25px;
+            z-index: 9999;
+            animation: fall 4s linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width:600px) {
+
+            .welcome-card,
+            .test-card,
+            .promise-card,
+            .treasure-card,
+            .miss-card,
+            .poetry-card,
+            .report,
+            .letter,
+            .final-card {
+                padding: 30px 18px;
+            }
+
+            .treasure-box {
+                width: 95px;
+                height: 95px;
+                font-size: 32px;
+            }
+
+            .poetry-text {
+                font-size: 19px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     PAGE 1 — SECRET ENTRY
+===================================================== -->
+
+<section id="page1" class="page active">
+
+    <div class="float-item" style="top:10%;left:10%;">💗</div>
+    <div class="float-item" style="top:18%;right:12%;">🌸</div>
+    <div class="float-item" style="bottom:15%;left:12%;">✨</div>
+    <div class="float-item" style="bottom:12%;right:10%;">🎀</div>
+
+    <div class="welcome-card">
+
+        <div class="big-heart">💗</div>
+
+        <h1 class="display-3 fw-bold">
+            Psst... Mahnoor 👀
+        </h1>
+
+        <p class="fs-5 mt-3">
+            Ya phir kahun...
+        </p>
+
+        <h2 class="display-4 text-danger">
+            Meri Mano 🌷
+        </h2>
+
+        <p class="mt-4">
+            Someone made something specially for you.
+            <br>
+            But there's one tiny problem...
+        </p>
+
+        <h4 class="mt-4">
+            I don't know if you're special enough to enter. 😌
+        </h4>
+
+        <button class="cute-btn pink-btn mt-4"
+                onclick="enterSurprise()">
+            Obviously I am 😎💅🏻
+        </button>
+
+        <p id="entryMessage" class="mt-4 fw-bold text-danger"></p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 2 — BESTIE TEST
+===================================================== -->
+
+<section id="page2" class="page">
+
+    <div class="test-card">
+
+        <div style="font-size:60px;">🕵🏻‍♀️</div>
+
+        <h1 class="display-4">
+            BESTIE VERIFICATION TEST
+        </h1>
+
+        <p class="mt-3">
+            Before entering further...
+            <br>
+            prove that you are actually <b>Mahnoor</b>. 😂
+        </p>
+
+        <hr>
+
+        <h4 class="mt-4">
+            Question 1:
+        </h4>
+
+        <p>
+            Mahnoor ko sabse zyada kya aata hai? 👀
+        </p>
+
+        <button class="choice-btn"
+                onclick="wrongAnswer()">
+            A) Time par reply karna 😌
+        </button>
+
+        <button class="choice-btn"
+                onclick="wrongAnswer()">
+            B) Overthinking 🧠
+        </button>
+
+        <button class="choice-btn"
+                onclick="correctAnswer()">
+            C) Teeno... aur meri jaan khana 😂
+        </button>
+
+        <button class="choice-btn"
+                onclick="wrongAnswer()">
+            D) Kuch bhi nahi 🤭
+        </button>
+
+        <div id="testResult" class="test-result"></div>
+
+        <button id="testNext"
+                class="cute-btn mt-3"
+                style="background:#8066c9;color:white;display:none;"
+                onclick="nextPage(3)">
+            Okay, verified 😂 →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 3 — RUNNING NO BUTTON
+===================================================== -->
+
+<section id="page3" class="page">
+
+    <div class="promise-card">
+
+        <div style="font-size:65px;">😂</div>
+
+        <h1 class="display-4">
+            One Very Serious Question
+        </h1>
+
+        <p class="fs-5 mt-4">
+            Mahnoor...
+            <br><br>
+            <b>Will you stay my bestie forever? 🥺</b>
+        </p>
+
+        <div class="run-area">
+
+            <button id="yesButton"
+                    onclick="yesClicked()">
+                YES 💗
+            </button>
+
+            <button id="noButton"
+                    onmouseover="runAway()"
+                    onclick="runAway()">
+                NO 😌
+            </button>
+
+        </div>
+
+        <p id="promiseMessage"
+           class="fw-bold text-danger"></p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 4 — TREASURE HUNT
+===================================================== -->
+
+<section id="page4" class="page">
+
+    <div class="treasure-card">
+
+        <div style="font-size:60px;">🎁</div>
+
+        <h1 class="display-4">
+            Four Little Doors
+        </h1>
+
+        <p>
+            Har door ke peeche tumhare liye kuch hai.
+            <br>
+            Sab ko open karna allowed hai. 👀
+        </p>
+
+        <div class="mt-4">
+
+            <button class="treasure-box"
+                    onclick="treasure(1)">
+                🌸
+            </button>
+
+            <button class="treasure-box"
+                    onclick="treasure(2)">
+                💌
+            </button>
+
+            <button class="treasure-box"
+                    onclick="treasure(3)">
+                🌙
+            </button>
+
+            <button class="treasure-box"
+                    onclick="treasure(4)">
+                🎀
+            </button>
+
+        </div>
+
+        <div id="treasureMessage"
+             class="treasure-message"></div>
+
+        <button id="treasureNext"
+                class="cute-btn mt-4"
+                style="background:#45a77d;color:white;display:none;"
+                onclick="nextPage(5)">
+            I Found All The Secrets 🌙 →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 5 — MISS YOU
+===================================================== -->
+
+<section id="page5" class="page">
+
+    <div class="miss-card">
+
+        <div class="moon">🌙</div>
+
+        <h1 class="display-3">
+            Okay... jokes aside.
+        </h1>
+
+        <h2 class="mt-3">
+            I really miss you, Mano. 🥺
+        </h2>
+
+        <p class="mt-4">
+            There are some things I don't always say...
+        </p>
+
+        <button class="cute-btn night-btn"
+                onclick="revealMiss()">
+            Tell Me Something 💌
+        </button>
+
+        <div id="miss1" class="miss-line">
+            Kabhi koi funny baat hoti hai...
+            <br>
+            aur sabse pehle dil karta hai:
+            <br>
+            <b>"Yaar, ye Mahnoor ko batani hai." 😂</b>
+        </div>
+
+        <div id="miss2" class="miss-line">
+            Kabhi koi achi news hoti hai...
+            <br>
+            aur automatically tum yaad aa jati ho. 💗
+        </div>
+
+        <div id="miss3" class="miss-line">
+            Aur kabhi bas dil karta hai...
+            <br>
+            ke distance naam ki koi cheez hoti hi na. 🥺
+        </div>
+
+        <button id="missNext"
+                class="cute-btn night-btn mt-4"
+                style="display:none;"
+                onclick="nextPage(6)">
+            A Little Poetry For You 🌙 →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 6 — URDU POETRY
+===================================================== -->
+
+<section id="page6" class="page">
+
+    <div class="poetry-card">
+
+        <div style="font-size:60px;">🥀</div>
+
+        <h1 class="display-3">
+            For My Mano
+        </h1>
+
+        <p>
+            Neeche buttons hain...
+            <br>
+            har ek mein ek choti si baat chupi hai. 🌷
+        </p>
+
+        <div class="mt-4">
+
+            <button class="cute-btn m-2"
+                    style="background:#ead9ff;"
+                    onclick="poetry(1)">
+                دوستی 🌸
+            </button>
+
+            <button class="cute-btn m-2"
+                    style="background:#ffd9e8;"
+                    onclick="poetry(2)">
+                یاد 🥀
+            </button>
+
+            <button class="cute-btn m-2"
+                    style="background:#dcecff;"
+                    onclick="poetry(3)">
+                دعا 🤍
+            </button>
+
+        </div>
+
+        <div id="poetryBox"
+             class="poetry-box">
+
+            <p id="poetryText"
+               class="urdu poetry-text mb-0">
+            </p>
+
+        </div>
+
+        <button id="poetryNext"
+                class="cute-btn mt-4"
+                style="background:#8860aa;color:white;display:none;"
+                onclick="nextPage(7)">
+            Ab Mahnoor Ki Official Report 😂 →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 7 — FUNNY REPORT
+===================================================== -->
+
+<section id="page7" class="page">
+
+    <div class="report">
+
+        <div class="text-center">
+
+            <div style="font-size:60px;">📋😂</div>
+
+            <h1 class="display-4">
+                Official Mahnoor Report
+            </h1>
+
+            <p>
+                Classified Bestie Department 🔐
+            </p>
+
+        </div>
+
+        <div class="report-item">
+            <b>Name:</b>
+            <span>Mahnoor 🌷</span>
+        </div>
+
+        <div class="report-item">
+            <b>Nickname:</b>
+            <span>Mano / Buddy / Bestie</span>
+        </div>
+
+        <div class="report-item">
+            <b>Special Skill:</b>
+            <span>Random baatein 😂</span>
+        </div>
+
+        <div class="report-item">
+            <b>Overthinking:</b>
+            <span>100/10 🧠</span>
+        </div>
+
+        <div class="report-item">
+            <b>Cuteness:</b>
+            <span>Classified 🤫</span>
+        </div>
+
+        <div class="report-item">
+            <b>Pagalpan:</b>
+            <span>Unlimited ♾️</span>
+        </div>
+
+        <div class="report-item">
+            <b>Bestie Status:</b>
+            <span>PERMANENT 💗</span>
+        </div>
+
+        <div class="text-center mt-4">
+
+            <p class="fw-bold">
+                ⚠️ Important Notice:
+            </p>
+
+            <p>
+                Bestie position once given...
+                <br>
+                <b>NO REFUNDS. 😂</b>
+            </p>
+
+            <button class="cute-btn"
+                    style="background:#d47c47;color:white;"
+                    onclick="nextPage(8)">
+                But Why You? 🥺 →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 8 — WHY YOU
+===================================================== -->
+
+<section id="page8" class="page">
+
+    <div class="why-card">
+
+        <div style="font-size:60px;">💗</div>
+
+        <h1 class="display-3">
+            But Seriously...
+        </h1>
+
+        <p class="fs-5">
+            What makes you so special to me?
+            <br>
+            Click each card. 🌷
+        </p>
+
+        <div class="why-item"
+             onclick="why(1)">
+            🌸 <b>01 — You make ordinary moments special.</b>
+            <div id="why1" class="why-answer">
+                Even random conversations with you become memories.
+            </div>
+        </div>
+
+        <div class="why-item"
+             onclick="why(2)">
+            😂 <b>02 — I can be completely pagal around you.</b>
+            <div id="why2" class="why-answer">
+                No filter. No formality. Bas full pagalpan. 😂
+            </div>
+        </div>
+
+        <div class="why-item"
+             onclick="why(3)">
+            🥹 <b>03 — I miss you.</b>
+            <div id="why3" class="why-answer">
+                Some people are missed because they matter.
+            </div>
+        </div>
+
+        <div class="why-item"
+             onclick="why(4)">
+            🫶🏻 <b>04 — You're my Mano.</b>
+            <div id="why4" class="why-answer">
+                Aur "my Mano" hona koi normal position nahi hai. 💗
+            </div>
+        </div>
+
+        <div class="why-item"
+             onclick="why(5)">
+            🌙 <b>05 — Distance didn't change your place.</b>
+            <div id="why5" class="why-answer">
+                Door ho sakti ho... dil se nahi.
+            </div>
+        </div>
+
+        <button id="whyNext"
+                class="cute-btn mt-4"
+                style="background:#d14e81;color:white;display:none;"
+                onclick="nextPage(9)">
+            Open The Letter 💌 →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 9 — LETTER
+===================================================== -->
+
+<section id="page9" class="page">
+
+    <div class="letter">
+
+        <h1 class="display-3 text-center">
+            Dear Mahnoor 💌
+        </h1>
+
+        <h3 class="text-center mt-2">
+            Meri Mano • My Buddy • My Bestie
+        </h3>
+
+        <p class="mt-5">
+            Mahnoor,
+        </p>
+
+        <p>
+            Aaj tumhara birthday hai aur main nahi chahti thi ke
+            tumhein bas ek normal sa "Happy Birthday" message mil jaye.
+            Isliye maine socha ke tumhare liye kuch aisa banaun
+            jo tum thora thora karke discover karo. 💗
+        </p>
+
+        <p>
+            Tum meri life mein sirf ek friend nahi ho.
+            Tum un logon mein se ho jinke saath random conversations,
+            silly jokes, hasi aur choti choti baatein bhi yaad ban jati hain.
+        </p>
+
+        <p>
+            Aur haan...
+            main tumhein bohat miss karti hoon.
+            Especially woh moments jab koi baat hoti hai aur dil karta hai
+            ke bas tum saamne hoti aur main tumhein woh baat bata deti.
+        </p>
+
+        <p>
+            Distance kabhi kabhi annoying hota hai,
+            lekin mujhe ye bhi acha lagta hai ke itni doori ke bawajood
+            tum mere liye important ho.
+        </p>
+
+        <p class="urdu text-center fs-5">
+            کچھ رشتے فاصلے کے محتاج نہیں ہوتے،<br>
+            وہ دل میں رہتے ہیں،<br>
+            اور دل سے کبھی دور نہیں ہوتے۔ 🤍
+        </p>
+
+        <p>
+            Meri dua hai ke tumhari life mein hamesha happiness ho,
+            tumhare dreams complete hon, tum hamesha smile karo,
+            aur tumhein woh sab mile jo tumhare dil ke liye acha ho.
+        </p>
+
+        <p>
+            Aur please birthday ke baad zyada attitude mat dikhana...
+            warna ye website tumse wapas le lungi. 😂
+        </p>
+
+        <p>
+            Stay the same beautiful, funny, crazy and wonderful
+            Mahnoor that I know.
+        </p>
+
+        <p class="fw-bold">
+            Happy Birthday in advance, meri Mano. 🌷
+        </p>
+
+        <p>
+            And remember:
+            <br>
+            <b>You are loved, you are valued, and you are deeply missed. 💗</b>
+        </p>
+
+        <div class="text-center mt-4">
+
+            <button class="cute-btn"
+                    style="background:#d67c57;color:white;"
+                    onclick="startLoading()">
+                One Last Surprise... 👀
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 10 — FAKE LOADING
+===================================================== -->
+
+<section id="page10" class="page">
+
+    <div class="loading-card">
+
+        <div style="font-size:70px;">🎁</div>
+
+        <h1 class="display-3">
+            Preparing Your Final Surprise...
+        </h1>
+
+        <p id="loadingText" class="mt-4">
+            Checking birthday magic...
+        </p>
+
+        <div class="loader">
+            <div id="loaderBar" class="loader-bar"></div>
+        </div>
+
+        <h4 id="loadingPercent" class="mt-3">
+            0%
+        </h4>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 11 — FINAL BIRTHDAY
+===================================================== -->
+
+<section id="page11" class="page">
+
+    <div class="float-item" style="top:8%;left:8%;">🎈</div>
+    <div class="float-item" style="top:10%;right:8%;">🎀</div>
+    <div class="float-item" style="bottom:12%;left:8%;">💗</div>
+    <div class="float-item" style="bottom:10%;right:8%;">✨</div>
+
+    <div class="final-card">
+
+        <div class="final-heart">
+            💗
+        </div>
+
+        <h1 class="birthday-title script">
+            Happy Birthday
+        </h1>
+
+        <h2 class="mahnoor-name script">
+            Mahnoor
+        </h2>
+
+        <h3 class="mt-3">
+            Meri Mano • My Buddy • My Bestie 🌷
+        </h3>
+
+        <div class="mt-4">
+
+            <span style="font-size:45px;">🎂</span>
+            <span style="font-size:45px;">🎉</span>
+            <span style="font-size:45px;">🎀</span>
+            <span style="font-size:45px;">💗</span>
+
+        </div>
+
+        <p class="fs-5 mt-4">
+            14 October — The Day My Favourite Buddy Was Born. 👑
+        </p>
+
+        <p class="mt-4">
+            May your life always be filled with
+            <br>
+            happiness, peace, laughter, success
+            <br>
+            and beautiful moments. ✨
+        </p>
+
+        <p class="urdu fs-4 mt-4">
+            دعا ہے تمہاری ہر صبح مسکراہٹ سے شروع ہو،<br>
+            ہر شام سکون لے کر آئے،<br>
+            اور زندگی کا ہر نیا سال<br>
+            تمہارے لیے پہلے سے زیادہ خوبصورت ہو۔ 🤍
+        </p>
+
+        <p class="fw-bold fs-4 mt-4">
+            Love you loads, birthday girl! 🥹💗
+        </p>
+
+        <p class="mt-4">
+            Distance chahe jitna bhi ho...
+            <br>
+            you're still one of my favourite people. 🌷
+        </p>
+
+        <button class="cute-btn mt-3"
+                style="background:#27202e;color:white;"
+                onclick="restart()">
+            Start The Surprise Again 🔄
+        </button>
+
+        <p class="mt-4 small text-muted">
+            Made with love, memories, pagalpan & lots of dua. 💗
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* =========================
+       PAGE NAVIGATION
+    ========================= */
+
+    function nextPage(number) {
+
+        document.querySelectorAll(".page").forEach(function(page) {
+            page.classList.remove("active");
+        });
+
+        document.getElementById("page" + number).classList.add("active");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+
+    /* =========================
+       PAGE 1
+    ========================= */
+
+    function enterSurprise() {
+
+        document.getElementById("entryMessage").innerHTML =
+            "Hmmm... confidence bhi hai aur attitude bhi 😂💗<br>Okay Mano, you may enter.";
+
+        setTimeout(function() {
+            nextPage(2);
+        }, 1800);
+    }
+
+
+    /* =========================
+       PAGE 2 TEST
+    ========================= */
+
+    function wrongAnswer() {
+
+        let result = document.getElementById("testResult");
+
+        result.style.display = "block";
+
+        result.innerHTML =
+            "🚨 WRONG ANSWER 🚨<br><br>" +
+            "Mahnoor ji, apni biography dobara parhein 😂<br>" +
+            "Try again! 👀";
+    }
+
+
+    function correctAnswer() {
+
+        let result = document.getElementById("testResult");
+
+        result.style.display = "block";
+
+        result.innerHTML =
+            "🎉 VERIFIED! 🎉<br><br>" +
+            "Yes! That's our Mahnoor 😂💗<br>" +
+            "Officially certified as my bestie.";
+
+        document.getElementById("testNext").style.display = "inline-block";
+    }
+
+
+    /* =========================
+       PAGE 3 RUNNING BUTTON
+    ========================= */
+
+    function runAway() {
+
+        let button = document.getElementById("noButton");
+
+        let area = document.querySelector(".run-area");
+
+        let maxX = area.clientWidth - button.offsetWidth;
+        let maxY = area.clientHeight - button.offsetHeight;
+
+        let x = Math.random() * maxX;
+        let y = Math.random() * maxY;
+
+        button.style.left = x + "px";
+        button.style.top = y + "px";
+    }
+
+
+    function yesClicked() {
+
+        document.getElementById("promiseMessage").innerHTML =
+            "I KNEW IT! 😂💗<br>" +
+            "No escape for you now, Mahnoor. Bestie contract permanently active. ♾️";
+
+        setTimeout(function() {
+            nextPage(4);
+        }, 2300);
+    }
+
+
+    /* =========================
+       PAGE 4 TREASURE
+    ========================= */
+
+    let treasureCount = 0;
+    let openedTreasures = [];
+
+    function treasure(number) {
+
+        if (!openedTreasures.includes(number)) {
+
+            openedTreasures.push(number);
+            treasureCount++;
+
+        }
+
+        let message = document.getElementById("treasureMessage");
+
+        message.style.display = "block";
+
+        if (number === 1) {
+
+            message.innerHTML =
+                "🌸 <b>Secret #1</b><br><br>" +
+                "Tumhari smile literally mood better kar sakti hai. 💗";
+
+        }
+
+        if (number === 2) {
+
+            message.innerHTML =
+                "💌 <b>Secret #2</b><br><br>" +
+                "Tumhein shayad idea nahi, lekin tumhari presence mere liye bohat matter karti hai. 🥹";
+
+        }
+
+        if (number === 3) {
+
+            message.innerHTML =
+                "🌙 <b>Secret #3</b><br><br>" +
+                "Door ho sakti ho... lekin meri favourite memories mein hamesha close ho. 🤍";
+
+        }
+
+        if (number === 4) {
+
+            message.innerHTML =
+                "🎀 <b>Secret #4</b><br><br>" +
+                "Official secret: You're stuck with me forever. 😂💗";
+
+        }
+
+        if (treasureCount === 4) {
+
+            document.getElementById("treasureNext").style.display =
+                "inline-block";
+
+        }
+    }
+
+
+    /* =========================
+       PAGE 5 MISS
+    ========================= */
+
+    let missStep = 0;
+
+    function revealMiss() {
+
+        missStep++;
+
+        if (missStep === 1) {
+            document.getElementById("miss1").style.display = "block";
+        }
+
+        else if (missStep === 2) {
+            document.getElementById("miss2").style.display = "block";
+        }
+
+        else if (missStep === 3) {
+            document.getElementById("miss3").style.display = "block";
+
+            document.getElementById("missNext").style.display =
+                "inline-block";
+        }
+    }
+
+
+    /* =========================
+       PAGE 6 POETRY
+    ========================= */
+
+    let poetryCount = 0;
+    let openedPoetry = [];
+
+    function poetry(number) {
+
+        if (!openedPoetry.includes(number)) {
+
+            openedPoetry.push(number);
+            poetryCount++;
+
+        }
+
+        let box = document.getElementById("poetryBox");
+        let text = document.getElementById("poetryText");
+
+        box.style.display = "block";
+
+        if (number === 1) {
+
+            text.innerHTML =
+                "کچھ لوگ زندگی میں آ کر<br>" +
+                "صرف دوست نہیں رہتے،<br>" +
+                "وہ زندگی کا خوبصورت حصہ<br>" +
+                "بن جاتے ہیں۔<br><br>" +
+                "تم بھی میرے لیے کچھ ایسی ہی ہو،<br>" +
+                "میری پیاری سی مانو۔ 🌸";
+
+        }
+
+        if (number === 2) {
+
+            text.innerHTML =
+                "تم دور ہو تو کیا ہوا،<br>" +
+                "یادوں میں تو ہر روز ملتی ہو،<br>" +
+                "کچھ لوگ فاصلے سے دور نہیں ہوتے،<br>" +
+                "بلکہ دل کے اور قریب ہو جاتے ہیں۔ 🥀";
+
+        }
+
+        if (number === 3) {
+
+            text.innerHTML =
+                "دعا ہے تمہاری ہر صبح<br>" +
+                "مسکراہٹ سے شروع ہو،<br>" +
+                "ہر شام سکون لے کر آئے،<br>" +
+                "اور زندگی کا ہر نیا سال<br>" +
+                "تمہیں پہلے سے زیادہ خوشیاں دے۔ 🤍";
+
+        }
+
+        if (poetryCount === 3) {
+
+            document.getElementById("poetryNext").style.display =
+                "inline-block";
+
+        }
+    }
+
+
+    /* =========================
+       PAGE 8 WHY YOU
+    ========================= */
+
+    let whyCount = 0;
+    let openedWhy = [];
+
+    function why(number) {
+
+        let answer = document.getElementById("why" + number);
+
+        if (answer.style.display === "block") {
+            return;
+        }
+
+        answer.style.display = "block";
+
+        if (!openedWhy.includes(number)) {
+
+            openedWhy.push(number);
+            whyCount++;
+
+        }
+
+        if (whyCount === 5) {
+
+            document.getElementById("whyNext").style.display =
+                "inline-block";
+
+        }
+    }
+
+
+    /* =========================
+       PAGE 10 LOADING
+    ========================= */
+
+    function startLoading() {
+
+        nextPage(10);
+
+        let percent = 0;
+
+        let bar = document.getElementById("loaderBar");
+        let percentage = document.getElementById("loadingPercent");
+        let text = document.getElementById("loadingText");
+
+        let messages = [
+            "Checking birthday magic... ✨",
+            "Collecting Mahnoor's smiles... 🌸",
+            "Downloading bestie memories... 💗",
+            "Adding a little pagalpan... 😂",
+            "Preparing birthday wishes... 🎂",
+            "Almost ready... 👀",
+            "SURPRISE READY! 🎉"
+        ];
+
+        let interval = setInterval(function() {
+
+            percent += 10;
+
+            bar.style.width = percent + "%";
+            percentage.innerText = percent + "%";
+
+            let index = Math.floor(percent / 15);
+
+            if (messages[index]) {
+                text.innerText = messages[index];
+            }
+
+            if (percent >= 100) {
+
+                clearInterval(interval);
+
+                setTimeout(function() {
+
+                    nextPage(11);
+
+                    launchConfetti();
+
+                }, 800);
+            }
+
+        }, 350);
+    }
+
+
+    /* =========================
+       CONFETTI
+    ========================= */
+
+    function launchConfetti() {
+
+        let emojis = [
+            "💗",
+            "🎉",
+            "🎀",
+            "✨",
+            "🌸",
+            "🥳",
+            "💖",
+            "🎂"
+        ];
+
+        for (let i = 0; i < 70; i++) {
+
+            let confetti = document.createElement("div");
+
+            confetti.className = "confetti";
+
+            confetti.innerText =
+                emojis[Math.floor(Math.random() * emojis.length)];
+
+            confetti.style.left =
+                Math.random() * 100 + "vw";
+
+            confetti.style.animationDuration =
+                (2 + Math.random() * 4) + "s";
+
+            confetti.style.fontSize =
+                (18 + Math.random() * 22) + "px";
+
+            document.body.appendChild(confetti);
+
+            setTimeout(function() {
+                confetti.remove();
+            }, 6000);
+        }
+    }
+
+
+    /* =========================
+       RESTART
+    ========================= */
+
+    function restart() {
+
+        location.reload();
+
+    }
+
+</script>
+
+</body>
+</html>
